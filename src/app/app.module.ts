@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AccountDataComponent } from './account-data/account-data.component';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AccountDataComponent } from './account-data/account-data.component';
     HttpClientModule,
     MdbModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],

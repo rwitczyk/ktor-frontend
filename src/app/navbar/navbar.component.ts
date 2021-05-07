@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   userId: string;
 
-  constructor() {
+  constructor(private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -19,5 +20,6 @@ export class NavbarComponent implements OnInit {
   clearData(): void {
     sessionStorage.clear();
     this.ngOnInit();
+    this.toastr.success('Wylogowano');
   }
 }

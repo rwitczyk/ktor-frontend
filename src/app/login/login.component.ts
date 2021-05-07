@@ -3,6 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {LoginUserDto} from '../models/LoginUserDto';
 import {UsersService} from '../services/users.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   signInForm: any;
   loginUserDto: LoginUserDto;
 
-  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private router: Router, private toastr: ToastrService) {
     this.signInForm = this.formBuilder.group({
       login: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
       // @ts-ignore
       sessionStorage.setItem('userId', value.userId);
       this.router.navigate(['home']);
+      this.toastr.success('Zalogowano!');
     });
   }
 }

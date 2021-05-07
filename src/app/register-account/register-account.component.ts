@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {UsersService} from '../services/users.service';
 import {RegisterUserDto} from '../models/RegisterUserDto';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-account',
@@ -12,7 +13,7 @@ export class RegisterAccountComponent implements OnInit {
   registerForm: any;
   user: RegisterUserDto;
 
-  constructor(private formBuilder: FormBuilder, private usersService: UsersService) {
+  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private toastr: ToastrService) {
     this.registerForm = this.formBuilder.group({
       login: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -33,8 +34,8 @@ export class RegisterAccountComponent implements OnInit {
     this.user.lastName = this.registerForm.controls.lastName.value;
     this.user.age = this.registerForm.controls.age.value;
     this.usersService.registerAccount(this.user).subscribe(() => {
+      this.toastr.success('Konto zostalo utworzone');
     }, error => {
-
     });
   }
 }
