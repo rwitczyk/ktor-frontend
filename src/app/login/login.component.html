@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="main-component-content">
+  <form class="text-center border border-light p-5" [formGroup]="signInForm">
+
+    <p class="h4 mb-4">Logowanie</p>
+
+    <!-- E-mail -->
+    <div class="md-form">
+      <input mdbInput mdbValidate type="text" class="form-control" formControlName="login" placeholder="Login">
+    </div>
+
+    <div class="md-form">
+      <input mdbInput mdbValidate type="password" class="form-control" formControlName="password" placeholder="Haslo">
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-primary" type="submit" (click)="sendForm()">Zaloguj</button>
+
+  </form>
+</div>

@@ -3,5 +3,10 @@
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
- 
+
 @import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+.main-component-content {
+  margin: 2rem auto;
+  width: 60%;
+}
