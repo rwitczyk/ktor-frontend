@@ -11,6 +11,8 @@ import { RegisterAccountComponent } from './register-account/register-account.co
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AccountDataComponent } from './account-data/account-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     NavbarComponent,
     RegisterAccountComponent,
-    LoginComponent
+    LoginComponent,
+    ChangePasswordComponent,
+    AccountDataComponent
   ],
   imports: [
     BrowserModule,

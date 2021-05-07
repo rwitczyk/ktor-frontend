@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {LoginUserDto} from '../models/LoginUserDto';
 import {UsersService} from '../services/users.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   signInForm: any;
   loginUserDto: LoginUserDto;
 
-  constructor(private formBuilder: FormBuilder, private usersService: UsersService) {
+  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private router: Router) {
     this.signInForm = this.formBuilder.group({
       login: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(5)]],
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
       console.log(value);
       // @ts-ignore
       sessionStorage.setItem('userId', value.userId);
+      this.router.navigate(['home']);
     });
   }
 }

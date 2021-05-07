@@ -4,6 +4,7 @@ import {RegisterUserDto} from '../models/RegisterUserDto';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {LoginUserDto} from '../models/LoginUserDto';
+import {ChangePasswordDto} from '../models/ChangePasswordDto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class UsersService {
 
   login(loginDto: LoginUserDto): Observable<void> {
     return this.http.post<void>(environment.backendUrl + '/login', loginDto);
+  }
+
+  changePassword(changePasswordDto: ChangePasswordDto): Observable<void> {
+    return this.http.post<void>(environment.backendUrl + '/editPassword/' + sessionStorage.getItem('userId'), changePasswordDto);
   }
 }
