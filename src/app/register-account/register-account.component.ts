@@ -36,6 +36,7 @@ export class RegisterAccountComponent implements OnInit {
     this.usersService.registerAccount(this.user).subscribe(() => {
       this.toastr.success('Konto zostalo utworzone');
     }, error => {
+      this.toastr.error('Login juz istnieje lub za slabe haslo!');
     });
   }
 }

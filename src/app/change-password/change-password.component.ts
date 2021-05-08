@@ -27,6 +27,8 @@ export class ChangePasswordComponent implements OnInit {
     this.changePasswordDto.password = this.changePasswordForm.controls.password.value;
     this.usersService.changePassword(this.changePasswordDto).subscribe(() => {
       this.toastr.success('Haslo zostalo zmienione');
+    }, error => {
+      this.toastr.error('Za slabe haslo!');
     });
   }
 }

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
 import {UsersService} from '../services/users.service';
 import {ThingDataDto} from '../models/ThingDataDto';
 import {Router} from '@angular/router';
@@ -13,7 +12,7 @@ export class UserThingsComponent implements OnInit {
 
   things: ThingDataDto[];
 
-  constructor(private formBuilder: FormBuilder, private usersService: UsersService, private router: Router) {
+  constructor(private usersService: UsersService, private router: Router) {
   }
 
   ngOnInit(): void {

@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('userId', value.userId);
       this.router.navigate(['home']);
       this.toastr.success('Zalogowano!');
+    }, error => {
+      this.toastr.error('Niepoprawny login/haslo');
     });
   }
 }
