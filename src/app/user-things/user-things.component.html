@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="main-component-content">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#id</th>
+      <th scope="col">Nazwa rzeczy</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let thing of things" (click)="navigateToDetails(thing.name)">
+      <th scope="row">{{thing.id}}</th>
+      <td>{{thing.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

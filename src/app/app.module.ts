@@ -14,6 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AccountDataComponent } from './account-data/account-data.component';
 import {ToastrModule} from 'ngx-toastr';
+import { UserThingsComponent } from './user-things/user-things.component';
+import { ThingDetailsComponent } from './thing-details/thing-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {ToastrModule} from 'ngx-toastr';
     RegisterAccountComponent,
     LoginComponent,
     ChangePasswordComponent,
-    AccountDataComponent
+    AccountDataComponent,
+    UserThingsComponent,
+    ThingDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -21,10 +21,10 @@
           <a class="nav-link" *ngIf="userId == null" aria-current="page" [routerLink]="['/registerAccount']">Rejestracja</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Logowanie</a>
+          <a class="nav-link" *ngIf="userId == null" [routerLink]="['/login']">Logowanie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="userId !== null" href="#">Lista rzeczy</a>
+          <a class="nav-link" *ngIf="userId !== null" [routerLink]="['/userThingsList']">Lista rzeczy</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="userId !== null" [routerLink]="['/accountData']">Edycja danych szczegolowych</a>

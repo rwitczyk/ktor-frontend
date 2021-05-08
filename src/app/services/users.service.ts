@@ -7,6 +7,7 @@ import {LoginUserDto} from '../models/LoginUserDto';
 import {ChangePasswordDto} from '../models/ChangePasswordDto';
 import {AccountUserDataDto} from '../models/AccountUserDataDto';
 import {UpdateAccountDataDto} from '../models/UpdateAccountDataDto';
+import {ThingDataDto} from '../models/ThingDataDto';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,9 @@ export class UsersService {
 
   updateAccountData(accountData: UpdateAccountDataDto): Observable<void> {
     return this.http.post<void>(environment.backendUrl + '/users/' + sessionStorage.getItem('userId'), accountData);
+  }
+
+  getAllUserThings(): Observable<ThingDataDto[]> {
+    return this.http.get<ThingDataDto[]>(environment.backendUrl + '/things/' + sessionStorage.getItem('userId'));
   }
 }
